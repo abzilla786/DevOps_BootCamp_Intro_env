@@ -7,6 +7,10 @@
  - Waterfall - V model
  - Transition to Agile and Scrum
  
+
+ ### Key Pillars of Devops
+ #### Monolith Architecture
+ 
  Create `vagrant file` n the current location
  ```
     Vagrant.configure("2") do |config|
@@ -30,6 +34,26 @@
   
     end
 ```
+### Create Provisions
+```
+#!/bin/bash
+sudo apt-get update -y
+sudo apt-get upgrade -y
+sudo apt-get install nginx -y
+```
+
+- Use sudo chmod +x provision.sh to make it executable
+- Add the below line into the vagrantfile above end, this will run the provision.sh file on use of vagrant up
+- It has run: always at the end so that it re-runs everytime it is reloaded
+# runs the provision file at boot, which updates and upgrades patchs and install nginx in this case
+```
+ config.vm.provision :shell, path: "provision.sh", run: 'always'
+You should then be able to connect on your localhost at 192.168.10.100
+```
+
+If not the vagrant ssh into your vm and check nginx status with systemctl status nginx
+
+
 ### Vagrant Commands
 ```
 Common commands:
@@ -65,14 +89,4 @@ Common commands:
      winrm-config    outputs WinRM configuration to connect to the machine
 ```
 
- ### Development Environment
-![](images/dev-env.png)
-
-
-
- ### Key Pillars of Devops
- 
- 
- #### Monolith Architecture
- 
  
