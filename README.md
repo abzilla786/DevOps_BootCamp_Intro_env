@@ -7,6 +7,10 @@
  - Waterfall - V model
  - Transition to Agile and Scrum
  
+
+ ### Key Pillars of Devops
+ #### Monolith Architecture
+ 
  Create `vagrant file` n the current location
  ```
     Vagrant.configure("2") do |config|
@@ -30,6 +34,14 @@
   
     end
 ```
+### Create Provisions
+```
+#!/bin/bash
+sudo apt-get update -y
+sudo apt-get upgrade -y
+sudo apt-get install nginx -y
+```
+
 ### Vagrant Commands
 ```
 Common commands:
@@ -65,14 +77,4 @@ Common commands:
      winrm-config    outputs WinRM configuration to connect to the machine
 ```
 
- ### Development Environment
-![](images/dev-env.png)
-
-
-
- ### Key Pillars of Devops
- 
- 
- #### Monolith Architecture
- 
  
