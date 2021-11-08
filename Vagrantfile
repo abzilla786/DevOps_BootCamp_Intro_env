@@ -14,7 +14,7 @@ Vagrant.configure("2") do |config|
 
 # sync folder from os to vm
             # "." means current location - into / inside our vm
-  config.vm.synced_folder ".", "home/vagrant/app"
+ config.vm.synced_folder ".", "home/vagrant/app"
   
 
 end
