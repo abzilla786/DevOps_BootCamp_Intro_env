@@ -53,5 +53,19 @@ The delivery of computing service to offer faster innovation, flexible resources
 - Availability zones are known as the data centers
 - Not every region has all the facilities available therefore, it must be taken into considering when making decisions which affects time and latency
 
+#### AWS services
+- Elastic computer service `EC2`
+- Simple Storage Service `S3`
+- Virtual Private Network `VPC`
+- Internet Gateway `IG`
+- Route Tables `RT`
+- Network Access controls `NACL`
+- Security Group `SG`
+- Cloud Watch `CW`
+- Simple Notification Services `SNS`
+- Load balancers `LB` - `ALB` - `ELB` - `NLB`
+- Auto Scaling Groups `ASG`
+- Amazon Machine Image `AMI`
+  
 
 For more information: https://aws.amazon.com/about-aws/global-infrastructure/
