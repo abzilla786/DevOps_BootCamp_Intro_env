@@ -28,3 +28,11 @@ sudo systemctl reload-or-restart nginx
 
 # finally, restart the nginx service so the new config takes hold
 sudo service nginx restart
+
+# populate seeds for posts
+node /app/app/seeds/seeds.js
+
+# install app
+cd /home/ubuntu/app/app
+npm install
+npm install express
