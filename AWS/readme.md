@@ -152,3 +152,32 @@ net:
 - t2 microservice
 - Select storage
 - Select SG 
+
+Dealing with Demand
+Big advantage of AWS and similar cloud services is the ability to scale with traffic
+AWS does provide the ability to automatically scale with demand
+Start with monitoring with Cloudwatch
+This raises when a level is reached
+Spin up autosclaing group
+A load balancer then rebalances the demand.
+It is also possible to deploy architecture in multiple availability zones to defend against potential data center problems.
+Have to create a listener group that checks machines are up and running.
+
+#### Basics of Setting up monitoring
+- When viewing an instance, select monitoring.
+- This shows stats such as CPU utlisation percentage, disk write, and so forth
+- Can add information to a dashboard
+- need to enable detailed montioring under manage detailed monitoring
+- this does cost more, so use with caution
+- add the monitoring to a dashboard of choice
+- next, in instances, either select the + sign next to your instances "alarm status" field, or enter the alarm creation menu via `actions -> monitor and troubleshoot ->Manage CloudWatch Alarms`
+- Name your alarm, and set the threshold you would like to be notified by
+- if you have an SNS group already set up, you can link it here
+- Otherwise, enter the Cloudwatch dashboard and edit the alarm
+- Add a new SNS group, and add the email addresses you would like to have notified when the alarm is triggered
+- You should now receive an email asking you to confirm the subscription
+- AWS will now let you know when your instance triggers an alarm!
+
+Full guide to editing or setting up an alarm here
+
+More on SNS groups here
