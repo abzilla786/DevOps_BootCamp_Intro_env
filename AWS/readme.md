@@ -283,3 +283,31 @@ A good idea is to split various metrics into separate dashboards, so that partic
 - ALB: Target group HTTP 80
 - AWS Keys
 - VPC - Subnets - SG
+
+#### setup autoscaling group
+- log in to aws services
+- select EC2
+- in menu on right hand side scroll down to ASG section and select ASG
+- select launch template
+- type in ASG name
+- select launch template (previously created) then click next
+- select VPC
+- select the availability zones and subnets you would like th ASG to operate within, then click next
+- select attach to a new load balancer unless you have an existing load balancer
+- select application load balancer
+- add load balancer name
+- select internet-facing sor load balancer scheme
+- enable group metrics collection within cloudwatch, then click next
+- customize group size, for this example we will set desired to 2, minimum as 2 and maximum as 3
+- for scaling policies select target tracking scaling policy
+- leave scaling policy name to default
+- metric type select average cpu utilization
+- target value as 30 for 30% (set as required)
+- click next
+- here you can add notifications to your ASG however for the purpose of this example we will skip this step as its optional
+- click next
+- click add tag
+- enter KEY 'Name' and actual value ie 'devops-abdullah-asg-app'
+- click next
+- review settings
+- Now finally click create auto scaling group
