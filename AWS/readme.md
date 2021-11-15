@@ -236,3 +236,50 @@ A good idea is to split various metrics into separate dashboards, so that partic
 - Scaling on Demand (Terminology)
   - Scaling Up versus scaling out: Scaling up means making components on an instance bigger to meet demand (e.g. increasing CPU capacity). Scaling means increasing the number of instances
   - Scaling to demand is generally best done by sxcaling out, as the previous configuration is known to be working.
+
+#### Setting Up EC2 for creating S3 bucket
+```
+- sudo apt-get Update
+- sudo apt-get upgrade
+- sudo apt-get install python -y
+- sudo apt-get install python-pip -y
+- sudo pip install awscli
+- sudo apt install python3-pip
+- alias python=python3
+```
+
+#### S3
+  - `aws s3 ls` to list buckets
+  - `aws --version`
+  - `aws configure` to add our keys and config
+  - `aws s3 mb s3://name --region name`
+  - `aws s3 cp s3://name/ file.md`
+  - `aws s3 cp file/md s3://name/`
+  - `aws s3 rm s3://bucketname --recursive`
+  - `aws s3 rb s3://bucketname`
+  - `aws s3 sync s3:bucketname/ test` sync from bucket to local host
+  
+#### AWSCLI
+- AWSCLI can be used to create any `aws` resource required
+
+#### install boto3
+```
+- sudo pip install virtualenv   
+- $ git clone https://github.com/boto/boto3.git
+- cd boto3
+- virtualenv venv
+- . venv/bin/activate
+- python -m pip install -r requirements.txt
+- python -m pip install -e .
+- python -m pip install boto3
+```
+
+#### Autoscaling and Load Balancing
+##### Application Load Balancer
+- Autoscaling automatically adjusts the amount of computational resources based on the server load
+- Load Balancing distributes traffic between EC2 instancec so that no on instance gets overwhelmed
+
+- ASG: Launch Template or Launch Configuration
+- ALB: Target group HTTP 80
+- AWS Keys
+- VPC - Subnets - SG
