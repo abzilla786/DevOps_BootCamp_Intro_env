@@ -311,3 +311,19 @@ A good idea is to split various metrics into separate dashboards, so that partic
 - click next
 - review settings
 - Now finally click create auto scaling group
+
+#### steps to create a vpc
+- VPC CIDR block e.g 10.102.0.0/16
+- internet gateway 
+  - attach the IG to VPC
+- Route Table
+  - allow my CIDr block e.g 10.102.0.0/16 
+  - allow IG which should be 0.0.0.0/16
+- Create Public subnet 10.102.2.0/24 - for node app
+  - connect to our VPC
+- Private Subnet 10.102.2.0/24 - used for mongodb 27017
+- Associate subnets to the route table
+- Security Groups public and private required rules for pub and private subnets
+
+#### Testing the VPC Config for public subnet
+
