@@ -324,6 +324,10 @@ A good idea is to split various metrics into separate dashboards, so that partic
 - Private Subnet 10.102.2.0/24 - used for mongodb 27017
 - Associate subnets to the route table
 - Security Groups public and private required rules for pub and private subnets
+- SG rules for app: 80 and 3000 ports
+- SG rules for DB: port 27017 from app ip or app security group or 0.0.0.0:27017
+  - 22 from your own ip
+  - 10.102.0.0/24 ipv 27017
 
 #### Testing the VPC Config for public subnet
 
